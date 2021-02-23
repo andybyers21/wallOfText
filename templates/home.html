@@ -1,12 +1,20 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>First Flask App</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/static/js/main.js"></script>
   </head>
+
   <body>
-    <h1>Hello, World!</h1>
-    <a href="example.html">Example Output</a>
+    <p>
+      Taking input from web<br /><br />
+      Text_Value1<input type="text" id="text1" name="text1" /><br /><br />
+      Text_Value2<input type="text" id="text2" name="text2" /><br /><br />
+      <button id="clicked" onclick="textJoin()">Submit</button>
+    </p>
+    <div class="show-data"></div>
   </body>
 </html>
