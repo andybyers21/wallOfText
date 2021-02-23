@@ -8,5 +8,7 @@ A natural language processing engine to aid individuals with ADHD who are workin
 
 ### Stack
 
-- Flask
+- Python 3.9.0
+- Flask 1.1.2
+- 
 
