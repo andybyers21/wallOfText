@@ -12,10 +12,13 @@ def do_something(text1,text2):
 
 
 @app.route('/')
-
-
 def home():
     return render_template('home.html')
+
+
+@app.route('/example')
+def example():
+    return render_template('example.html')
 
 
 @app.route('/join', methods=['GET','POST'])
