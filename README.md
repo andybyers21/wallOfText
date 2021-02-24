@@ -8,6 +8,8 @@ prolonged periods of time.
 
 ## Work in Progress
 
+V-0.0.1, Much Alpha
+
 ### Stack
 
 - Python 3.9.0
