@@ -20,6 +20,11 @@ def example():
     return render_template('example.html')
 
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
 @app.route('/join', methods=['GET', 'POST'])
 
 
@@ -37,4 +42,5 @@ def my_form_post():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=1313, debug=True)
+
