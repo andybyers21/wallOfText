@@ -1,28 +1,70 @@
 html {
-  font-family: "Helevetica", sans-serif;
+    font-family: "Helevetica", sans-serif;
 }
 
 body {
-  color: #333;
-  font-weight: 100;
-  max-width: 50em;
-  margin: 0 auto;
+    color: #333;
+    font-weight: 100;
+    margin: 0 auto;
+}
+
+.content {
+    max-width: 50em;
+    margin: 0 auto;
 }
 
 div:focus {
-  outline: none;
+    outline: none;
+}
+
+header {
+    background-color: #f1fa8c;
+    height: 55px;
+    width: 100%;
+    opacity: 0.9;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+header h1.logo {
+    margin: 0;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    float: left;
+}
+
+header h1.logo:hover {
+    text-decoration: none;
+}
+
+.menu {
+    float: right;
+    margin-top: 8px;
+}
+
+.menu li {
+    display: inline;
+}
+
+.menu li + li {
+    margin-left: 35px;
+}
+
+.menu li a {
+    color: #444;
+    text-decoration: none;
 }
 
 #heading {
-  font-size: 48px;
-  padding: 20px;
-  padding-top: 30px;
+    font-size: 48px;
+    padding: 20px;
+    padding-top: 30px;
 }
 
 #content {
-  font-size: 24px;
-  padding-top: 10px;
-  padding: 20px;
+    font-size: 24px;
+    padding-top: 10px;
+    padding: 20px;
 }
 
 #text-editor {

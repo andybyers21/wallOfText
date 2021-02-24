@@ -23,9 +23,9 @@ function textJoin() {
 
 // Text Editor
 document.getElementById("heading").innerHTML =
-  localStorage["title"] || "Just Write"; // default text
+  localStorage["title"] || "Wall of Text"; // default text
 document.getElementById("content").innerHTML =
-  localStorage["text"] || "This text is automatically saved every second :) "; // default text
+  localStorage["text"] || "Delete this text and type of paste your text to be formatted into this box."; // default text
 
 setInterval(function() {
   // fuction that is saving the innerHTML of the div
