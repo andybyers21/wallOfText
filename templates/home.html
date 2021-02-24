@@ -2,10 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/static/css/main.css" />
     <title>First Flask App</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="/static/js/main.js"></script>
   </head>
 
   <body>
@@ -13,14 +12,24 @@
     <a href=example >
       <button>See example output</button>
     </a>
+    <hr>
 
-    <p>
+    <div id="text-editor">
+        <div id="heading" contenteditable="true"></div>
+        <hr>
+        <div id="content" contenteditable="true"></div>
+    </div>
+
+    <div id="tmp">
       <br />
       <br />
       Text_Value1<input type="text" id="text1" name="text1" /><br /><br />
       Text_Value2<input type="text" id="text2" name="text2" /><br /><br />
       <button id="clicked" onclick="textJoin()">Submit</button>
-    </p>
+    </div>
     <div class="show-data"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/static/js/main.js"></script>
   </body>
 </html>
