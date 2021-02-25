@@ -9,13 +9,46 @@
     {% extends "template.html" %}
     {% block content %}
 
-    <div id="text-editor">
-      <div type="text" id="heading" name="heading" contenteditable="true"></div>
+    <form action="{{ url_for('background_text_process') }}" 
+          method="post" 
+          id="text-editor" 
+          class="data_entry" 
+          enctype="multipart/form-data">
+      <input type="text" id="heading" name="heading" contenteditable="true">
       <hr />
-      <div type="text" id="content" name="content" contenteditable="true"></div>
-    </div>
+      <input type="text" id="content" name="content" contenteditable="true">
+      <hr />
+      <output id="text-editor-output" class="output" ></output>
+    </form>
     <!-- TODO: Add the new function to this button -->
     <button id="clicked" onclick="#()">Submit</button>
+
+<!-- the below code blindly trusts the user input and displays it on the webpage which can result 
+    in Cross-Site Scripting (XSS) and that is not good! Avoid using innerHTML property when 
+    displaying user input, because it can be used to inject malicious HTML tags (e.g. <script>), 
+        i would highly recommend using innerText property instead. -->
+<script type="text/javascript">
+    $(function () {
+        $('#text-editor').on('submit', function (e) {
+            e.preventDefault();
+
+            var form = $(this)[0];
+            var formData = new FormData(form);
+
+            $.ajax({
+                url: '/background_text_process',
+                method: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    console.log(data);
+                    document.getElementById('text-editor-output').innerHTML = data;
+                }
+            });
+        });
+    });
+</script>
 
     <div id="tmp">
       <br />

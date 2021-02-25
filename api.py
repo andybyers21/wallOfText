@@ -4,7 +4,16 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+   return render_template('home.html')
+
+
+@app.route('/background_text_process', methods=['GET', 'POST'])
+def background_text_process():
+    if request.method == 'POST':
+        text = request.form['throughput_rate_text']
+        processed_text = str(text)
+        throughput = transition_user_input(processed_text)
+        return jsonify(throughput)
 
 
 @app.route('/example')
@@ -20,9 +29,6 @@ def contact():
 @app.route('/about')
 def about():
     return render_template('about.html')
-
-
-@app.route('/join', methods=['GET', 'POST'])
 
 
 def my_form_post():
