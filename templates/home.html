@@ -9,59 +9,21 @@
     {% extends "template.html" %}
     {% block content %}
 
-    <form action="{{ url_for('background_text_process') }}" 
-          method="post" 
+    <form method="post" 
           id="text-editor" 
           class="data_entry" 
           enctype="multipart/form-data">
-      <input type="text" id="heading" name="heading" contenteditable="true">
+      <div type="text" id="heading" name="heading" contenteditable="true"></div>
       <hr />
-      <input type="text" id="content" name="content" contenteditable="true">
-      <hr />
+      <div type="text" id="content" name="content" contenteditable="true"></div>
       <output id="text-editor-output" class="output" ></output>
     </form>
+    
+    <br />
     <!-- TODO: Add the new function to this button -->
     <button id="clicked" onclick="#()">Submit</button>
-
-<!-- the below code blindly trusts the user input and displays it on the webpage which can result 
-    in Cross-Site Scripting (XSS) and that is not good! Avoid using innerHTML property when 
-    displaying user input, because it can be used to inject malicious HTML tags (e.g. <script>), 
-        i would highly recommend using innerText property instead. -->
-<script type="text/javascript">
-    $(function () {
-        $('#text-editor').on('submit', function (e) {
-            e.preventDefault();
-
-            var form = $(this)[0];
-            var formData = new FormData(form);
-
-            $.ajax({
-                url: '/background_text_process',
-                method: 'POST',
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function (data) {
-                    console.log(data);
-                    document.getElementById('text-editor-output').innerHTML = data;
-                }
-            });
-        });
-    });
-</script>
-
-    <div id="tmp">
-      <br />
-      <br />
-      Text_Value1<input type="text" id="text1" name="text1" /><br /><br />
-      Text_Value2<input type="text" id="text2" name="text2" /><br /><br />
-      <button id="clicked" onclick="textJoin()">Submit</button>
-      <br />
-      <br />
-    </div>
-    <div class="show-data"></div>
-
     <script src="/static/js/input.js"></script>
+
     {% endblock %}
   </body>
 </html>

@@ -7,13 +7,13 @@ def home():
    return render_template('home.html')
 
 
-@app.route('/background_text_process', methods=['GET', 'POST'])
-def background_text_process():
-    if request.method == 'POST':
-        text = request.form['throughput_rate_text']
-        processed_text = str(text)
-        throughput = transition_user_input(processed_text)
-        return jsonify(throughput)
+# @app.route('/background_text_process', methods=['GET', 'POST'])
+# def background_text_process():
+#     if request.method == 'POST':
+#         text = request.form['throughput_rate_text']
+#         processed_text = str(text)
+#         throughput = transition_user_input(processed_text)
+#         return jsonify(throughput)
 
 
 @app.route('/example')
@@ -29,25 +29,6 @@ def contact():
 @app.route('/about')
 def about():
     return render_template('about.html')
-
-
-def my_form_post():
-    def do_something(text1, text2):
-        text1 = text1.upper()
-        text2 = text2.upper()
-        combine = (text1 + " " + text2)
-        return combine
-
-    text1 = request.form['text1']
-    text2 = request.form['text2']
-    combine = do_something(text1, text2)
-
-    result = {
-        "output": combine
-    }
-
-    result = {str(key): value for key, value in result.items()}
-    return jsonify(result=result)
 
 
 if __name__ == '__main__':
