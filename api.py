@@ -1,14 +1,6 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, session
 
 app = Flask(__name__)
-
-
-def do_something(text1, text2):
-    text1 = text1.upper()
-    text2 = text2.upper()
-    combine = (text1 + " " + text2)
-    return combine
-
 
 @app.route('/')
 def home():
@@ -34,6 +26,12 @@ def about():
 
 
 def my_form_post():
+    def do_something(text1, text2):
+        text1 = text1.upper()
+        text2 = text2.upper()
+        combine = (text1 + " " + text2)
+        return combine
+
     text1 = request.form['text1']
     text2 = request.form['text2']
     combine = do_something(text1, text2)
