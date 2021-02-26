@@ -17,7 +17,8 @@ h1 {
 }
 
 p,
-li {
+li,
+.process_text_output {
   font-family: monaco, Consolas, 'Lucida Console', monospace;
   font-size: 15px;
   font-style: normal;

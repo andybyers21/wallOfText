@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template 
+from flask import Flask, request, render_template, Markup 
 
 import process
 
@@ -17,7 +17,9 @@ def home():
 @app.route('/output', methods=['POST'])
 def output():
     input_text = request.form['text']
-    return render_template('output.html', string_=process.text_process(input_text))
+    return render_template('output.html',
+                            string_=Markup(process.text_process(input_text))
+                            )
 
 
 @app.route('/example')
