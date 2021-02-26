@@ -6,6 +6,15 @@ app = Flask(
         static_folder="static"
         )
 
+
+def text_process(text):
+    """ 
+    PROCESS USER TEXT
+    """
+    processed_text = text.upper()
+    return processed_text
+
+
 @app.route('/')
 def home():
    return render_template('home.html')
@@ -14,12 +23,7 @@ def home():
 @app.route('/output', methods=['POST'])
 def output():
     input_text = request.form['text']
-    processed_text = input_text.upper()
-    return render_template('output.html', string_=processed_text)
-
-# @app.route('/output')
-# def output():
-#     return render_template('output.html')
+    return render_template('output.html', string_=text_process(input_text))
 
 
 @app.route('/example')
