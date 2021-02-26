@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/static/css/home.css">
     <title>Wall of Text - Home</title>
   </head>
 
@@ -24,7 +25,8 @@
 
 
     <form action="{{ url_for('output') }}" method="post">
-        <textarea placeholder="Type of paste your text to be converted here" 
+        <textarea id="text-editor"
+                  placeholder="Type of paste your text to be converted here" 
                   name="text"
                   cols="90" rows="20"></textarea>
         </br>

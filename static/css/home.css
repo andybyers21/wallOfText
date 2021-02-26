@@ -1,0 +1,5 @@
+#text-editor {
+    /* border: 1px solid; */
+    overflow: auto;
+    outline: none;
+}

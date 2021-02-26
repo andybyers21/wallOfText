@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Wall of Text - Output</title>
-    </head>
-    <body>
-      {% extends "template.html" %}
-      {% block content %}
-      <h1>Form Output</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/static/css/output.css" />
+    <title>Wall of Text - Output</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
 
-      <p>{{ string_ }}</p>
+    <h1>Form Output</h1>
 
-      {% endblock %}
-    </body>
+    <p>{{ string_ }}</p>
+
+    {% endblock %}
+  </body>
 </html>

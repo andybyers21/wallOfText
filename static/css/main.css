@@ -17,6 +17,8 @@ div:focus {
     outline: none;
 }
 
+/* NAVIGATION */
+
 header {
     background-color: #f1fa8c;
     height: 55px;
@@ -63,15 +65,7 @@ header h1.logo:hover {
 }
 
 #content {
-    font-size: 24px;
     padding-top: 10px;
     padding: 20px;
 }
 
-#text-editor {
-    border: 1px solid;
-}
-
-#tmp {
-    border: none;
-}
