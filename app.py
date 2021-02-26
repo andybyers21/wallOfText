@@ -15,7 +15,7 @@ def home():
 def output():
     input_text = request.form['text']
     processed_text = input_text.upper()
-    return 'You entered: {}'.format(processed_text)
+    return render_template('output.html', string_=processed_text)
 
 # @app.route('/output')
 # def output():
