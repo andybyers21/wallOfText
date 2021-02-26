@@ -1,4 +1,4 @@
-from flask import Flask, render_template 
+from flask import Flask, request, render_template 
 
 app = Flask(
         __name__,
@@ -11,9 +11,15 @@ def home():
    return render_template('home.html')
 
 
-@app.route('/output')
+@app.route('/output', methods=['POST'])
 def output():
-    return render_template('output.html')
+    input_text = request.form['text']
+    processed_text = input_text.upper()
+    return 'You entered: {}'.format(processed_text)
+
+# @app.route('/output')
+# def output():
+#     return render_template('output.html')
 
 
 @app.route('/example')
