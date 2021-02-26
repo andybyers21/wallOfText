@@ -1,18 +1,12 @@
 from flask import Flask, request, render_template 
 
+import process
+
 app = Flask(
         __name__,
         template_folder="templates",
         static_folder="static"
         )
-
-
-def text_process(text):
-    """ 
-    PROCESS USER TEXT
-    """
-    processed_text = text.upper()
-    return processed_text
 
 
 @app.route('/')
@@ -23,7 +17,7 @@ def home():
 @app.route('/output', methods=['POST'])
 def output():
     input_text = request.form['text']
-    return render_template('output.html', string_=text_process(input_text))
+    return render_template('output.html', string_=process.text_process(input_text))
 
 
 @app.route('/example')
