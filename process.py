@@ -1,21 +1,21 @@
 def text_process(text):
     """ 
     Process user input text.
+
+    text, takes user sumitted plain text and formats it as per the WoT
+    specification.
     """
-    # NOTE: the last line will also have an orphan <p> tag
-    # NOTE: this assumes proper use of full stops in the input text
-    
-    # Identify line breaks and insert <hr> tag 
-    text = text.replace("\n", "<hr>" )
+#    text = text.replace("\r\n\r\n", "<br><hr><br>")
+    text_list = text.split(".")
+    new_list = []
 
-    # Add bullet point and <p> tag to first line
-    text = "<p>- " + text
+    for item in text_list:
+        new_string = "<li>" + item + ".</li>"
+        new_list.append(new_string)
 
-    # Split lines at full stop and add bullet point
-    text = text.replace('.', '.</p>\n<p>- ')
+    new_list = new_list[:-1]
 
-    # Remove the orphan bullet point and <p> tag
+    new_string = new_string.join(new_list)
+    new_string = "<ul>" + new_string + "</ul>"
 
-    return text
-
-
+    return new_string
