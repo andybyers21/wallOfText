@@ -1,3 +1,5 @@
+import re
+
 def text_process(text):
     """ 
     Process user input text.
@@ -14,8 +16,7 @@ def text_process(text):
         new_list.append(new_string)
 
     new_list = new_list[:-1]
-
+    new_string = re.sub('<li>.</li>', '', new_string)
     new_string = new_string.join(new_list)
-    new_string = "<ul>" + new_string + "</ul>"
 
     return new_string
