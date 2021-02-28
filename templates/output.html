@@ -6,8 +6,9 @@
     <title>Wall of Text - Output</title>
   </head>
   <body>
-    {% extends "template.html" %}
-    {% block content %}
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+    </nav>
 
     <h1>Form Output</h1>
 
@@ -15,6 +16,5 @@
         <ul>{{ string_ }}</ul>
     </div>
 
-    {% endblock %}
   </body>
 </html>
