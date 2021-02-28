@@ -17,6 +17,8 @@ def text_process(text):
         new_string = new_string.capitalize()
         new_string = "<li>" + new_string + "</li>"
         new_string = re.sub('<li><hr>', '<hr><br><li>', new_string)
+        # FIXME: edge case, this does not capatalize first letter on new line
+        # due to additional <hr> tags at start of list item.:w
         new_list.append(new_string)
     
     str1 = ""  
