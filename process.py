@@ -8,7 +8,7 @@ def text_process(text):
     specification.
     """
     text = re.sub("\r\n\r\n", "<hr>", text)
-    text_list = re.findall('.*?[.!\?]+', text)
+    text_list = re.findall('.*?[.!\?]+', text, re.IGNORECASE)
     # TODO: also need to check for speach in text ""
     new_list = []
 
