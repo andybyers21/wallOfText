@@ -16,8 +16,10 @@ def home():
 
 @app.route('/output', methods=['POST'])
 def output():
+    input_title = request.form['title']
     input_text = request.form['text']
     return render_template('output.html',
+                            title_=Markup(process.title_process(input_title)),
                             string_=Markup(process.text_process(input_text))
                             )
 

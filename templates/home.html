@@ -10,21 +10,13 @@
     {% extends "template.html" %}
     {% block content %}
 
-    <!--<form method="POST" 
-          id="text-editor" 
-          class="data_entry" 
-            >
-      <div type="text" id="heading" name="heading" contenteditable="true"></div>
-      <hr />
-      <div type="text" id="content" name="content" contenteditable="true"></div>
-    </form>-->
-    
-    <br />
-    <!-- TODO: Add the new function to this button -->
-    <!--<button id="clicked" onclick="#()">Submit</button>-->
-
-
     <form action="{{ url_for('output') }}" method="post">
+        </br>
+        <textarea id="title-editor"
+                  placeholder="Title"
+                  name="title"
+                  cols="90" rows="1"></textarea>
+        </br>
         <textarea id="text-editor"
                   placeholder="Type of paste your text to be converted here" 
                   name="text"

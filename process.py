@@ -1,5 +1,21 @@
 import re
 
+def title_process(title):
+    if len(title) == 0:
+        title = "your wall of text"
+    output_title = ""
+    list_of_words = title.split()
+    for elem in list_of_words:
+        if len(output_title) > 0:
+            output_title = output_title + " " + elem.strip().capitalize()
+        else:
+            output_title = elem.capitalize()
+    if not output_title:
+        return title
+    else:
+        return output_title
+
+
 def text_process(text):
     """ 
     Process user input text.
@@ -7,6 +23,7 @@ def text_process(text):
     text, takes user sumitted plain text and formats it as per the WoT
     specification.
     """
+    # FIXME: if last line does not have a . it gets ignored.
     text = re.sub("\r\n\r\n", "<hr>", text)
     text_list = re.findall('.*?[.!\?]+', text, re.IGNORECASE)
     # TODO: also need to check for speach in text ""
