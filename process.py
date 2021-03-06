@@ -23,9 +23,10 @@ def text_process(text):
     text, takes user sumitted plain text and formats it as per the WoT
     specification.
     """
-    # FIXME: if last line does not have a . it gets ignored.
+    if (text[-1] != "."):
+        text = text + "."
     text = re.sub("\r\n\r\n", "<hr>", text)
-    text_list = re.findall('.*?[.!\?]+', text, re.IGNORECASE)
+    text_list = re.findall('.*?[.!\?]+', text)
     # TODO: also need to check for speach in text ""
     new_list = []
 

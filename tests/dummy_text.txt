@@ -12,4 +12,4 @@ This dummy text uses material from the Wikipedia article <a href="https://en.wik
 
 This is a string. here are some lower case stuffs! Some Words With Capitals. More string required.
 
-New Line! What about a Question?
+New Line! What about a Question? Some text without a full stop
