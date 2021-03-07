@@ -19,8 +19,7 @@ def clean_input(string):
 
     string = bleach.clean(string, tags=allowed_tags, attributes=allowed_attrs)
 
-    #    "".join(string.rstrip())
-    #    "".join(string.rstrip().lstrip())
+    string = string.rstrip().lstrip()
     return string
 
 
