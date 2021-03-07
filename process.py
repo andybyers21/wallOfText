@@ -1,6 +1,19 @@
 import re
 
+def remove_whitespace(string):
+    """
+    Removes white space from strings
+    """
+    "".join(string.rstrip())
+    "".join(string.rstrip().lstrip())
+    return string
+
+
 def title_process(title):
+    """
+    Process title field.
+    """
+    remove_whitespace(title)
     if len(title) == 0:
         title = "your wall of text"
     output_title = ""
@@ -18,11 +31,12 @@ def title_process(title):
 
 def text_process(text):
     """ 
-    Process user input text.
+    Process user input field.
 
     text, takes user sumitted plain text and formats it as per the WoT
     specification.
     """
+    remove_whitespace(text) 
     if (text[-1] != "."):
         text = text + "."
     text = re.sub("\r\n\r\n", "<hr>", text)
