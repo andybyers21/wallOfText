@@ -11,6 +11,7 @@
     {% block content %}
 
     <form action="{{ url_for('output') }}" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
         </br>
         <textarea id="title-editor"
                   placeholder="Title"

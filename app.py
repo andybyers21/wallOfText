@@ -1,12 +1,21 @@
 from flask import Flask, request, render_template, Markup 
+from flask_wtf.csrf import CSRFProtect
 
 import process
+import secrets
 
 app = Flask(
-        __name__,
-        template_folder="templates",
-        static_folder="static"
-        )
+      __name__,
+      template_folder="templates",
+      static_folder="static"
+      )
+
+# Generate random secret key for each instance of the app
+secret_key = secrets.token_hex(16)
+app.config['SECRET_KEY'] = secret_key
+
+csrf = CSRFProtect(app)
+csrf.init_app(app)
 
 
 @app.route('/')
